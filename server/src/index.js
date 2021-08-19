@@ -9,11 +9,13 @@ require('dotenv').config();
 const middlewares = require('./middlewares');
 const logs = require('../api/logs');
 
+const path = __dirname + '/../views/';
 
 const app = express();
 
 mongoose.connect(process.env.DATABASE_URI,  {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 
 app.use(morgan('common'));
@@ -26,12 +28,6 @@ app.use(express.urlencoded({
 }));
 app.use(express.json())
 
-app.get('/', (request, response) => {
-    res.json({
-        message: 'Hello World!',
-    });
-});
-
 app.use('/api/logs', logs);
 
 app.use(middlewares.notFound);
@@ -39,5 +35,5 @@ app.use(middlewares.errorHandler);
 
 const port = process.env.PORT || 1337;
 app.listen(port, () => {
-    console.log('Listening on http://localhost:' + port);
+    console.log(`Listening on http://localhost:${port}`);
 });
