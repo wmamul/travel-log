@@ -6,30 +6,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstra@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
         <title>Hello, world!</title>
     </head>
     <body>
-        <div class="post-log">
-            <h3>Add new log entry</h3>
-            <form class="form" id="log-form">
-                <label for="input-title">Title</label>
-                <input type="text" required="required" name="input-title" id="input-title">
-                <label for="input-desc">Description</label>
-                <input type="text" name="input-desc" id="input-desc">
-                <label for="input-comment">Comment</label>
-                <input type="text" name="input-comment" id="input-comment">
-                <label for="input-rating">Rating</label>
-                <input type="number" required="required" name="input-rating" id="input-rating" min=0 max=10>
-                <label for="input-latitude">Latitude</label>
-                <input type="number" for="input-latitude" required="required" name="input-latitude" id="input=latitude" min=-90 max=90>
-                <label for="input-latitude">Longitude</label>
-                <input type="number" for="input-longitude" required="required" name="input-longitude" id="input=longitude" min=-180 max=180>
-                <label for="input-date">Date visited</label>
-                <input type="date" required="required" for="input-date" id="input-date">
-                <button type="submit">Add</button>
-            </form>
+        <nav class="navbar navbar-dark bg-dark sticky-top">
+            <div class="container-fluid">
+                <a class="nav-brand" href="./index.html">Travel log</a>
+                <a class="nav-link" href="./postlog.html">Add new entry</a>
+            </div>
+        </nav>
+
+        <div class="d-flex justify-content-center">
+            <div class="post-log col-sm-3">
+                <h3>Add new log entry</h3>
+                <form class="form" id="log-form">
+                    <div class="mb-3">
+                        <label for="input-title" class="form-label">Title</label>
+                        <input class="form-control" type="text" required="required" name="title" id="input-title">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-desc" class="form-label">Description</label>
+                        <textarea class="form-control" rows="3" type="text" name="description" id="input-desc"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-comment" class="form-label">Comment</label>
+                        <textarea class="form-control" type="text" rows="3" name="comments" id="input-comment"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-rating" class="form-label">Rating</label>
+                        <input class="form-control" type="number" required="required" name="rating" id="input-rating" min=0 max=10>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-latitude" class="form-label">Latitude</label>
+                        <input class="form-control" type="number" for="input-latitude" required="required" name="latitude" id="input-latitude" min=-90 max=90>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-latitude" class="form-label">Longitude</label>
+                        <input class="form-control" type="number" for="input-longitude" required="required" name="longitude" id="input-longitude" min=-180 max=180>
+                    </div>
+                    <div class="mb-3">
+                        <label for="input-date" class="form-label">Date visited</label>
+                        <input class="form-control" type="datetime-local" required="required" for="input-date" id="input-date" name="visitDate">
+                    </div>
+                    <button type="submit" class="btn btn-dark">Add</button>
+                </form>
+            </div>
         </div>
 
         <script src="../js/main.js"></script>
